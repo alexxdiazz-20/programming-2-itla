@@ -20,16 +20,18 @@ namespace Fastfixer_Web.Controllers
             _db = db;
         }
 
+        // Método para la página principal
         public IActionResult Index()
         {
-            var clientes = _db.Clientes.ToList(); // 🔹 Obtiene los clientes
-            if (!clientes.Any()) // 🔹 Si no hay clientes, mostrar mensaje
+            var clientes = _db.Clientes.ToList(); // Obtiene los clientes
+            if (!clientes.Any()) // Si no hay clientes, mostrar mensaje
             {
                 ViewBag.Mensaje = "No hay clientes registrados en la base de datos.";
             }
             return View(clientes);
         }
 
+        // Método para ver detalles de un cliente
         public IActionResult Detalle(int id)
         {
             var cliente = _db.Clientes.FirstOrDefault(c => c.Id == id);
@@ -40,6 +42,13 @@ namespace Fastfixer_Web.Controllers
             return View(cliente);
         }
 
+        // Método para mostrar la página de privacidad
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        // Método para manejar errores
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
@@ -47,5 +56,3 @@ namespace Fastfixer_Web.Controllers
         }
     }
 }
-
-
