@@ -1,0 +1,9 @@
+﻿@model Fastfixer_Web.Models.Entities.Clientes
+
+<h2>¿Desea eliminar a @Model.Nombre?</h2>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

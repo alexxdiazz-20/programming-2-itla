@@ -1,0 +1,16 @@
+﻿@model Fastfixer_Web.Models.Entities.Clientes
+
+<h2>Editar Cliente</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label>Nombre:</label>
+        <input asp-for="Nombre" class="form-control" required />
+    </div>
+    <div>
+        <label>Teléfono:</label>
+        <input asp-for="Telefono" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
